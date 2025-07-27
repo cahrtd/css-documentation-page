@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <main id="main-doc">
+
+      <nav id="navbar">
+        <header id="navbarHeader">CSS Documentation</header>
+        <ul>
+          <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+          <li><a class="nav-link" href="#Selectors">Selectors</a></li>
+          <li><a class="nav-link" href="#Box_Model">Box Model</a></li>
+          <li><a class="nav-link" href="#Flexbox">Flexbox</a></li>
+          <li><a class="nav-link" href="#Responsive_Design_and_Media_Queries">Responsive Design and Media Queries</a></li>
+          <li><a class="nav-link" href="#CSS_Animations">CSS Animations</a></li>
+          <li><a class="nav-link" href="#Reference">Reference</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <section class="main-section" id="Introduction">
+          <header>Introduction</header>
+          <p>Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of HTML documents. It allows developers to control layout, colors, fonts, and other visual aspects of a webpage, separating content from design.</p>
+          <p>By linking a CSS file to your HTML, you can style multiple pages consistently and make your site responsive across different devices. CSS uses selectors to target HTML elements, applying styles that cascade based on specificity and inheritance rules.</p>
+        </section>
+
+        <section class="main-section" id="Selectors">
+          <header>Selectors</header>
+          <p>Selectors are patterns used to select the elements you want to style. There are various types of selectors, including simple selectors like element selectors (<code>p</code>, <code>h1</code>), class selectors (<code>.class-name</code>), and ID selectors (<code>#id-name</code>).</p>
+          <ul id="ul-selectors">
+            <li>Element selector: targets elements by tag name
+              <pre><code>p {             
+  color: blue;  
+}               </code></pre>
+            </li>
+            <li>Class selector: targets elements with a specific class
+              <pre><code>.highlight {
+  background-color: yellow;
+}</code></pre>
+            </li>
+            <li>ID selector: targets a unique element by ID
+              <pre><code>#header {
+  font-size: 24px;
+}</code></pre>
+            </li>
+          </ul>
+          <p>More advanced selectors include attribute selectors (<code>input[type="text"]</code>), pseudo-classes (<code>:hover</code>, <code>:nth-child(n)</code>), and pseudo-elements (<code>::before</code>, <code>::after</code>). Understanding selectors helps you apply styles precisely without unnecessarily cluttering your CSS.</p>
+          <ul>
+            <li>Attribute selector: targets elements with a specific attribute
+              <pre><code>input[type="text"] {
+  border: 1px solid gray;
+}</code></pre>
+            </li>
+          </ul>
+        </section>
+
+        <section class="main-section" id="Box_Model">
+          <header>Box Model</header>
+          <p>The box model is fundamental to layout in CSS. Every HTML element is considered a rectangular box composed of content, padding, border, and margin areas.</p>
+          <ul>
+            <li>Content is the actual content like text or images</li>
+            <li>Padding is the space inside the box between the content and border</li>
+            <li>Border surrounds the padding and content</li>
+            <li>Margin is the space outside the border that separates elements</li>
+          </ul>
+          <pre><code>div {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 10px;
+}</code></pre>
+          <p>Properly manipulating these areas is essential for spacing and alignment on your webpage.</p>
+        </section>
+
+        <section class="main-section" id="Flexbox">
+          <header>Flexbox</header>
+          <p>Flexbox is a powerful layout module designed to arrange items in one dimension, either as a row or column. It simplifies complex layouts and provides flexibility for responsive designs.</p>
+          <p>Key properties include:</p>
+          <ul>
+            <li><code>display: flex</code> turns on flexbox on a container</li>
+            <li><code>justify-content</code> aligns items horizontally (start, center, space-between)</li>
+            <li><code>align-items</code> aligns items vertically within the container</li>
+            <li><code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code> control how flex items resize and distribute space</li>
+          </ul>
+          <p>Flexbox is widely supported and often preferred over older layout methods like floats.</p>
+        </section>
+
+        <section class="main-section" id="Responsive_Design_and_Media_Queries">
+          <header>Responsive Design and Media Queries</header>
+          <p>Responsive design adjusts layout for different screen sizes.</p>
+          <ul>
+            <li>Use relative units like <code>%</code>, <code>vw</code> (viewport width), and <code>vh</code> (viewport height)</li>
+            <li>Use media queries to apply CSS rules based on device width</li>
+          </ul>
+          <pre><code>.container {
+  width: 80%;
+  margin: auto;
+}</code></pre>
+
+
+          <pre><code>@media (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+}</code></pre>
+          <p>This means on screens smaller than 600px, <code>.container</code> will take the full width.</p>
+        </section>
+
+        <section class="main-section" id="CSS_Animations">
+          <header>CSS Animations</header>
+          <p>CSS animations enable you to create smooth and dynamic visual effects without needing JavaScript. You define a sequence of style changes with <code>@keyframes</code>, then apply the animation to elements using properties like <code>animation-name</code>, <code>animation-duration</code>, and <code>animation-timing-function</code>.</p>
+          <p>Animations can fade elements in or out, move them, rotate, scale, or combine multiple effects.</p>
+          <pre><code>@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}</code></pre>
+          <pre><code>.element {
+  animation-name: slideIn;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}</code></pre>
+          <p>Animations enhance user experience by adding interactivity and visual feedback, making websites feel more alive and engaging.</p>
+        </section>
+
+        <section class="main-section" id="Reference">
+          <header>Reference</header>
+          <p>The information on this page was researched and compiled with the assistance of an AI language model developed by OpenAI (ChatGPT).</p>
+        </section>
+      </div>
+
+    </main>
+    
+  </body>
+</html>
